@@ -1,0 +1,149 @@
+.detailPage {
+  min-height: 100vh;
+  background: transparent;
+  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.btnBack {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  color: #64748b;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  margin-bottom: 32px;
+  transition: all 0.2s;
+}
+
+.btnBack:hover { color: white; transform: translateX(-4px); }
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  background: rgba(15, 23, 42, 0.4);
+  backdrop-filter: blur(12px);
+  padding: 40px;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  margin-bottom: 32px;
+}
+
+.appIconLarge {
+  width: 80px;
+  height: 80px;
+  background: rgba(0, 98, 255, 0.1);
+  color: #0062ff;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+}
+
+.title { font-size: 2.25rem; font-weight: 800; color: white; margin: 0; }
+.statusBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 20px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-top: 16px;
+  background: rgba(16, 185, 129, 0.1);
+  color: #10b981;
+  border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.urlLine {
+  background: rgba(15, 23, 42, 0.4);
+  padding: 24px 32px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  margin-bottom: 32px;
+}
+
+.urlLink { color: #0062ff; font-weight: 700; text-decoration: none; flex: 1; font-size: 1.1rem; }
+
+.section {
+  background: rgba(15, 23, 42, 0.4);
+  padding: 32px;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  margin-bottom: 32px;
+}
+
+.section h3 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: white;
+  margin: 0 0 32px 0;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.configGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+.configItem {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.configLabel { font-size: 0.8rem; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 0.5px; }
+.configValue { font-size: 1.1rem; font-weight: 800; color: white; }
+
+.actionsPanel {
+  background: rgba(15, 23, 42, 0.8);
+  padding: 40px;
+  border-radius: 32px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 40px;
+}
+
+.actionGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.btnAction {
+  padding: 18px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  font-weight: 800;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  transition: all 0.2s;
+}
+
+.btnStop { background: rgba(239, 68, 68, 0.1); color: #ef4444; border-color: rgba(239, 68, 68, 0.2); }
+.btnStart { background: rgba(16, 185, 129, 0.1); color: #10b981; border-color: rgba(16, 185, 129, 0.2); }
+.btnRedeploy { background: #0062ff; color: white; border: none; }
+.btnDelete { background: rgba(255, 255, 255, 0.05); color: #94a3b8; }
+
+.btnAction:hover:not(:disabled) { transform: translateY(-4px); box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); }
+.btnAction:disabled { opacity: 0.5; }
+
+.spin { animation: spin 2s linear infinite; }
+@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }

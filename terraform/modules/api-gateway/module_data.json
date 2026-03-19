@@ -1,0 +1,40 @@
+{
+  "name": "API Gateway REST API",
+  "description": "AWS API Gateway REST API with resources, methods, and integrations",
+  "version": "1.0.0",
+  "provider": "aws",
+  "category": "networking",
+  "tags": ["api-gateway", "rest-api", "serverless", "integration"],
+  "resources": [
+    "aws_api_gateway_rest_api",
+    "aws_api_gateway_resource",
+    "aws_api_gateway_method",
+    "aws_api_gateway_integration",
+    "aws_api_gateway_deployment",
+    "aws_api_gateway_stage",
+    "aws_api_gateway_authorizer",
+    "aws_api_gateway_usage_plan"
+  ],
+  "estimated_cost": {
+    "monthly_base": 3.50,
+    "per_million_requests": 3.50,
+    "currency": "USD",
+    "notes": "First 1 million API calls per month are free"
+  },
+  "deployment_time": {
+    "estimated_minutes": 3,
+    "factors": ["methods_count", "integrations_count", "authorizers_count"]
+  },
+  "prerequisites": [
+    "Lambda functions (for Lambda integrations)",
+    "IAM roles for API Gateway",
+    "SSL certificates (for custom domains)"
+  ],
+  "use_cases": [
+    "REST API backends",
+    "Microservices gateway",
+    "Mobile app APIs",
+    "Third-party integrations",
+    "Serverless applications"
+  ]
+}

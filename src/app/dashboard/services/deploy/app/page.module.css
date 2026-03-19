@@ -1,0 +1,198 @@
+.container {
+  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.backBtn {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  color: #94a3b8;
+  padding: 10px;
+  border-radius: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.backBtn:hover {
+  background: rgba(255, 255, 255, 0.07);
+  color: white;
+}
+
+.titleSection h1 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: white;
+  margin-bottom: 4px;
+}
+
+.titleSection p {
+  color: #64748b;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 32px;
+}
+
+.card {
+  background: rgba(15, 23, 42, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 32px;
+  margin-bottom: 32px;
+}
+
+.card h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.inputGroup {
+  margin-bottom: 24px;
+}
+
+.inputGroup label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #94a3b8;
+  margin-bottom: 10px;
+}
+
+.inputField, .selectField, .textAreaField {
+  width: 100%;
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 14px 16px;
+  color: white;
+  font-size: 0.95rem;
+  outline: none;
+  transition: all 0.2s;
+}
+
+.inputField:focus, .selectField:focus, .textAreaField:focus {
+  border-color: #0062ff;
+  background: rgba(15, 23, 42, 0.8);
+}
+
+.toggleGroup {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.toggleBtn {
+    flex: 1;
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #94a3b8;
+    padding: 12px;
+    border-radius: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.toggleBtn.active {
+    background: #0062ff10;
+    border-color: #0062ff;
+    color: #0062ff;
+}
+
+.summaryCard {
+    position: sticky;
+    top: 40px;
+}
+
+.summaryTitle {
+    font-weight: 800;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.summaryItem {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    font-size: 0.9rem;
+}
+
+.summaryLabel { color: #64748b; }
+.summaryValue { color: #e2e8f0; font-weight: 700; }
+
+.deployBtn {
+    width: 100%;
+    background: #0062ff;
+    color: white;
+    border: none;
+    padding: 16px;
+    border-radius: 12px;
+    font-weight: 800;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 24px;
+    transition: all 0.2s;
+}
+
+.deployBtn:hover:not(:disabled) {
+    background: #0056e0;
+    transform: translateY(-2px);
+}
+
+.deployBtn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.spin { animation: spin 2s linear infinite; }
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.subText {
+    font-size: 0.75rem;
+    color: #475569;
+    margin-top: 6px;
+}
+
+.featuresGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.feature {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.8rem;
+    color: #10b981;
+    background: #10b98110;
+    padding: 8px 12px;
+    border-radius: 8px;
+}

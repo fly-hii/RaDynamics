@@ -1,0 +1,69 @@
+{
+  "name": "AWS Lambda Function",
+  "description": "AWS Lambda function with triggers and configurations",
+  "version": "1.0.0",
+  "provider": "aws",
+  "category": "compute",
+  "tags": ["lambda", "serverless", "compute", "function"],
+  "resources": [
+    "aws_lambda_function",
+    "aws_lambda_permission",
+    "aws_lambda_alias",
+    "aws_cloudwatch_log_group",
+    "aws_lambda_event_source_mapping"
+  ],
+  "estimated_cost": {
+    "monthly_base": 0.00,
+    "per_request": 0.0000002,
+    "per_gb_second": 0.0000166667,
+    "currency": "USD",
+    "notes": "Pay per use - first 1M requests free monthly"
+  },
+  "deployment_time": {
+    "estimated_minutes": 2,
+    "factors": ["code_size", "vpc_configuration", "triggers_count"]
+  },
+  "prerequisites": [
+    "IAM role with Lambda execution permissions",
+    "Function code (ZIP file or S3 object)",
+    "VPC configuration (if VPC access needed)"
+  ],
+  "use_cases": [
+    "API backends",
+    "Data processing",
+    "Event-driven automation",
+    "Microservices",
+    "Real-time file processing",
+    "Scheduled tasks"
+  ],
+  "limitations": [
+    "15-minute maximum execution time",
+    "10GB maximum memory",
+    "512MB /tmp directory storage",
+    "1000 concurrent executions (default limit)"
+  ],
+  "supported_runtimes": [
+    "nodejs18.x",
+    "nodejs16.x",
+    "python3.11",
+    "python3.10",
+    "python3.9",
+    "java17",
+    "java11",
+    "java8.al2",
+    "dotnet6",
+    "go1.x",
+    "ruby3.2",
+    "provided.al2"
+  ],
+  "trigger_types": [
+    "API Gateway",
+    "S3",
+    "DynamoDB",
+    "Kinesis",
+    "SQS",
+    "SNS",
+    "CloudWatch Events",
+    "Application Load Balancer"
+  ]
+}

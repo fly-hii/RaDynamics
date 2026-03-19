@@ -1,0 +1,288 @@
+.container {
+  padding: 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.loaderContainer {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  color: #64748b;
+  font-weight: 700;
+  background: #020617;
+}
+
+.spinner {
+  animation: spin 2s linear infinite;
+  color: #0062ff;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.statCard {
+  background: rgba(15, 23, 42, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  transition: all 0.3s ease;
+}
+
+.statCard:hover {
+  background: rgba(15, 23, 42, 0.6);
+  border-color: rgba(0, 98, 255, 0.2);
+  transform: translateY(-4px);
+}
+
+.statIcon {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.statLabel {
+  color: #64748b;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.statValue {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.contentGrid {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 40px;
+}
+
+.mainCard {
+  background: rgba(15, 23, 42, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 24px;
+  padding: 32px;
+  min-height: 500px;
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.cardHeader h3 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: white;
+}
+
+.viewAllBtn {
+  color: #0062ff;
+  background: none;
+  border: none;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.deployList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.deployItem {
+  background: rgba(2, 6, 23, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.2s ease;
+}
+
+.deployItem:hover {
+  background: rgba(2, 6, 23, 0.6);
+  border-color: rgba(255, 255, 255, 0.1);
+  transform: scale(1.01);
+}
+
+.deployInfo {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.resourceIcon {
+  width: 40px;
+  height: 40px;
+  background: #1e293b;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #94a3b8;
+}
+
+.resourceName {
+  color: white;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.resourceType {
+  color: #64748b;
+  font-size: 0.85rem;
+  margin-top: 2px;
+}
+
+.statusBadge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.completed { background: rgba(16, 185, 129, 0.1); color: #10b981; }
+.failed { background: rgba(239, 68, 68, 0.1); color: #ef4444; }
+.pending { background: rgba(245, 158, 11, 0.1); color: #f59e0b; }
+
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 80px 0;
+  color: #475569;
+}
+
+.emptyIcon {
+  color: #1e293b;
+}
+
+.createBtn {
+  background: #0062ff;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.sidePanel {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.actionCard, .healthCard {
+  background: rgba(15, 23, 42, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 24px;
+}
+
+.actionCard h4, .healthCard h4 {
+  color: white;
+  margin-bottom: 20px;
+  font-size: 1rem;
+}
+
+.actionGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+.actionItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px;
+  background: rgba(2, 6, 23, 0.4);
+  border-radius: 12px;
+  color: #94a3b8;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.actionItem:hover {
+  background: rgba(0, 98, 255, 0.1);
+  color: white;
+}
+
+.healthHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pulse {
+  width: 10px;
+  height: 10px;
+  background: #10b981;
+  border-radius: 50%;
+  box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(16, 185, 129, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+
+.metricRow {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+  font-size: 0.9rem;
+  color: #64748b;
+  font-weight: 600;
+}
+
+.metricValue {
+  color: white;
+  font-weight: 800;
+}
+
+@media (max-width: 1024px) {
+  .contentGrid { grid-template-columns: 1fr; }
+  .statsGrid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 640px) {
+  .statsGrid { grid-template-columns: 1fr; }
+}

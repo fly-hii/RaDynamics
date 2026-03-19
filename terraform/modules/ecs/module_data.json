@@ -1,0 +1,133 @@
+{
+  "name": "Amazon ECS Cluster",
+  "description": "AWS ECS cluster with comprehensive security controls and container orchestration",
+  "version": "1.0.0",
+  "provider": "aws",
+  "category": "compute",
+  "tags": ["ecs", "containers", "orchestration", "fargate", "ec2"],
+  "resources": [
+    "aws_ecs_cluster",
+    "aws_ecs_cluster_capacity_providers",
+    "aws_ecs_capacity_provider",
+    "aws_ecs_task_definition",
+    "aws_ecs_service",
+    "aws_cloudwatch_log_group",
+    "aws_cloudwatch_metric_alarm"
+  ],
+  "estimated_cost": {
+    "fargate_vcpu_hour": 0.04048,
+    "fargate_gb_hour": 0.004445,
+    "ec2_instance_hour": 0.0116,
+    "currency": "USD",
+    "notes": "Costs vary by launch type, instance size, and usage patterns"
+  },
+  "deployment_time": {
+    "estimated_minutes": 8,
+    "factors": ["launch_type", "service_count", "task_definition_complexity", "capacity_provider_setup"]
+  },
+  "prerequisites": [
+    "VPC with subnets (for awsvpc network mode)",
+    "Security groups",
+    "IAM roles (task execution role, task role)",
+    "Container images in ECR or Docker Hub",
+    "Load balancer target groups (optional)"
+  ],
+  "use_cases": [
+    "Microservices architecture",
+    "Containerized web applications",
+    "Batch processing workloads",
+    "API services",
+    "Background job processing",
+    "CI/CD pipeline execution"
+  ],
+  "limitations": [
+    "Fargate: 4 vCPU and 30 GB memory maximum per task",
+    "EC2: Limited by underlying instance resources",
+    "Maximum 1000 tasks per service",
+    "Maximum 10 target groups per service"
+  ],
+  "security_controls": [
+    {
+      "id": "ECS-01",
+      "name": "Container Security",
+      "description": "Enforce read-only root filesystem and non-privileged containers",
+      "compliance": ["SOC2", "PCI-DSS", "HIPAA"]
+    },
+    {
+      "id": "ECS-02",
+      "name": "Monitoring and Logging",
+      "description": "Enable CloudWatch Container Insights and comprehensive logging",
+      "compliance": ["SOC2", "PCI-DSS"]
+    },
+    {
+      "id": "ECS-03",
+      "name": "Execute Command Logging",
+      "description": "Log all ECS Exec commands for audit trails",
+      "compliance": ["SOC2", "PCI-DSS", "HIPAA"]
+    },
+    {
+      "id": "ECS-04",
+      "name": "Secrets Management",
+      "description": "Use AWS Secrets Manager or Parameter Store for sensitive data",
+      "compliance": ["SOC2", "PCI-DSS", "HIPAA"]
+    },
+    {
+      "id": "ECS-05",
+      "name": "Data Encryption",
+      "description": "Encrypt logs and data at rest and in transit",
+      "compliance": ["SOC2", "PCI-DSS", "HIPAA"]
+    }
+  ],
+  "launch_types": [
+    {
+      "name": "Fargate",
+      "description": "Serverless compute for containers",
+      "use_case": "Simplified container management without EC2 instances"
+    },
+    {
+      "name": "EC2",
+      "description": "Run containers on EC2 instances",
+      "use_case": "More control over underlying infrastructure"
+    },
+    {
+      "name": "External",
+      "description": "Run containers on external compute",
+      "use_case": "On-premises or third-party infrastructure"
+    }
+  ],
+  "network_modes": [
+    {
+      "name": "awsvpc",
+      "description": "Each task gets its own ENI",
+      "required_for": ["Fargate", "Security groups per task"]
+    },
+    {
+      "name": "bridge",
+      "description": "Default Docker bridge network",
+      "use_case": "EC2 launch type with port mapping"
+    },
+    {
+      "name": "host",
+      "description": "Use host network stack",
+      "use_case": "Direct access to host networking"
+    },
+    {
+      "name": "none",
+      "description": "No network connectivity",
+      "use_case": "Batch jobs without network requirements"
+    }
+  ],
+  "capacity_providers": [
+    "FARGATE",
+    "FARGATE_SPOT",
+    "EC2 Auto Scaling Groups"
+  ],
+  "monitoring_metrics": [
+    "CPUUtilization",
+    "MemoryUtilization",
+    "TaskCount",
+    "ServiceCount",
+    "RunningTaskCount",
+    "PendingTaskCount"
+  ]
+}

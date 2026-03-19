@@ -1,0 +1,56 @@
+{
+  "module_info": {
+    "name": "terraform-aws-rds-module",
+    "version": "1.0.0",
+    "description": "AWS RDS L1 Module with comprehensive security controls and CCMS compliance",
+    "provider": "aws",
+    "service": "rds",
+    "resource_type": "db_instance",
+    "tier": "L1",
+    "compliance": "CCMS"
+  },
+  "security_controls": {
+    "implemented": [
+      "RDS-01", "RDS-02", "RDS-03", "RDS-04", "RDS-05", "RDS-06", "RDS-07"
+    ],
+    "total_count": 7,
+    "compliance_frameworks": ["NIST", "ISO27001", "SOC2", "PCI-DSS"]
+  },
+  "ccms_config": {
+    "tag_chaining": true,
+    "l1_module": true,
+    "security_validation": true,
+    "compliance_reporting": true
+  },
+  "features": {
+    "multi_engine_support": true,
+    "encryption_at_rest": true,
+    "backup_automation": true,
+    "multi_az_deployment": true,
+    "read_replicas": true,
+    "performance_insights": true,
+    "enhanced_monitoring": true,
+    "cloudwatch_integration": true,
+    "parameter_groups": true,
+    "option_groups": true,
+    "subnet_groups": true
+  },
+  "supported_engines": [
+    "mysql",
+    "postgres", 
+    "mariadb",
+    "oracle-ee",
+    "oracle-se2",
+    "sqlserver-ee",
+    "sqlserver-se",
+    "sqlserver-ex",
+    "sqlserver-web"
+  ],
+  "storage_types": [
+    "gp2",
+    "gp3", 
+    "io1",
+    "io2",
+    "standard"
+  ]
+}

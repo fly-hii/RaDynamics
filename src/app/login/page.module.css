@@ -1,0 +1,293 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  background: #020617;
+  overflow: hidden;
+  position: relative;
+}
+
+.circuitBg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle at 2px 2px, rgba(255,255,255,0.05) 1px, transparent 0);
+  background-size: 32px 32px;
+  z-index: 0;
+}
+
+.glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(0, 98, 255, 0.15) 0%, transparent 70%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.loginCard {
+  width: 500px;
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 10;
+  background: rgba(2, 6, 23, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  position: relative;
+}
+
+.homeLink {
+  position: absolute;
+  top: 40px;
+  left: 60px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #475569;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: all 0.2s ease;
+}
+
+.homeLink:hover {
+  color: #0062ff;
+  transform: translateX(-4px);
+}
+
+.cardHeader {
+  margin-bottom: 48px;
+  text-decoration: none;
+  display: block;
+  transition: opacity 0.2s ease;
+}
+
+.cardHeader:hover {
+  opacity: 0.8;
+}
+
+.switchPage {
+  color: #64748b;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.switchPage a {
+  color: #0062ff;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  margin-left: 4px;
+}
+
+.switchPage a:hover {
+  color: #6366f1;
+  text-decoration: underline;
+}
+
+.loginLogo {
+  display: block;
+  object-fit: contain;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.inputGroup {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  position: absolute;
+  left: 16px;
+  color: #475569;
+}
+
+.inputGroup input {
+  width: 100%;
+  background: rgba(15, 23, 42, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 16px 16px 16px 48px;
+  color: white;
+  font-size: 1.05rem;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.inputGroup input:focus {
+  border-color: #0062ff;
+  background: rgba(15, 23, 42, 0.8);
+  box-shadow: 0 0 0 4px rgba(0, 98, 255, 0.1);
+}
+
+.submitBtn {
+  margin-top: 12px;
+  background: #0062ff;
+  color: white;
+  border: none;
+  padding: 18px;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 98, 255, 0.3);
+}
+
+.submitBtn:hover {
+  background: #2563eb;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0, 98, 255, 0.5);
+}
+
+.submitBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.error {
+  color: #ef4444;
+  background: rgba(239, 68, 68, 0.1);
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.otpInfo {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.shieldIcon {
+  color: #0062ff;
+  margin-bottom: 16px;
+}
+
+.otpInput {
+   letter-spacing: 0.5em;
+   text-align: center;
+   font-weight: 800;
+   font-size: 1.5rem !important;
+}
+
+.backBtn {
+  background: none;
+  border: none;
+  color: #64748b;
+  cursor: pointer;
+  font-size: 0.95rem;
+  margin-top: 16px;
+  font-weight: 600;
+}
+
+.footer {
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.trustBadge {
+   display: flex;
+   align-items: center;
+   gap: 8px;
+   color: #475569;
+   font-size: 0.85rem;
+   font-weight: 600;
+}
+
+.status {
+   display: flex;
+   align-items: center;
+   gap: 8px;
+   color: #10b981;
+   font-size: 0.85rem;
+   font-weight: 700;
+}
+
+.dot {
+   width: 8px;
+   height: 8px;
+   background: #10b981;
+   border-radius: 50%;
+   box-shadow: 0 0 10px #10b981;
+}
+
+.brandPanel {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-left: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.floatingFeatures {
+  width: 480px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.feature {
+   display: flex;
+   gap: 24px;
+   background: rgba(255, 255, 255, 0.02);
+   padding: 32px;
+   border-radius: 20px;
+   border: 1px solid rgba(255, 255, 255, 0.05);
+   align-items: flex-start;
+   transition: all 0.3s ease;
+}
+
+.feature:hover {
+   background: rgba(255, 255, 255, 0.04);
+}
+
+.feature svg {
+   color: #0062ff;
+}
+
+.feature h3 {
+   color: white;
+   margin-bottom: 8px;
+   font-size: 1.1rem;
+}
+
+.feature p {
+   color: #64748b;
+   line-height: 1.6;
+   font-size: 0.95rem;
+}
+
+@media (max-width: 1024px) {
+  .brandPanel {
+    display: none;
+  }
+  .loginCard {
+    width: 100%;
+    max-width: none;
+    border-right: none;
+  }
+}

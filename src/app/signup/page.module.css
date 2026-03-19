@@ -1,0 +1,368 @@
+.container {
+  min-height: 100vh;
+  background: #020617;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  position: relative;
+  overflow: hidden;
+  font-family: var(--font-inter), 'Inter', sans-serif;
+  color: white;
+}
+
+.bg { position: absolute; inset: 0; }
+
+.glow1 {
+  position: absolute;
+  top: -20%;
+  left: -10%;
+  width: 50%;
+  height: 60%;
+  background: radial-gradient(circle, rgba(0, 98, 255, 0.12) 0%, transparent 70%);
+  filter: blur(80px);
+}
+
+.glow2 {
+  position: absolute;
+  bottom: -10%;
+  right: -5%;
+  width: 40%;
+  height: 50%;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.1) 0%, transparent 70%);
+  filter: blur(80px);
+}
+
+.grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask-image: radial-gradient(circle at center, black, transparent 80%);
+}
+
+.card {
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 28px;
+  padding: 48px;
+  width: 100%;
+  max-width: 560px;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.5);
+  padding-top: 80px;
+}
+
+.homeLink {
+  position: absolute;
+  top: 32px;
+  left: 48px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #475569;
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: all 0.2s ease;
+}
+
+.homeLink:hover {
+  color: #0062ff;
+  transform: translateX(-4px);
+}
+
+.logoArea {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 32px;
+  text-decoration: none;
+  color: inherit;
+  width: fit-content;
+  transition: opacity 0.2s ease;
+}
+
+.logoArea:hover {
+  opacity: 0.8;
+}
+
+.logoIcon {
+  background: #0062ff;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 20px rgba(0, 98, 255, 0.4);
+}
+
+.logoText {
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+
+/* Steps */
+.steps {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 36px;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #334155;
+  transition: color 0.3s;
+}
+
+.stepDone {
+  color: #0062ff;
+}
+
+.step span:first-child {
+  width: 28px;
+  height: 28px;
+  background: rgba(30, 41, 59, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+
+.stepDone span:first-child {
+  background: rgba(0, 98, 255, 0.2);
+  border-color: #0062ff;
+  color: #0062ff;
+}
+
+.stepLine {
+  flex: 1;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* Form */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form h2 {
+  font-size: 1.75rem;
+  font-weight: 800;
+  margin: 0;
+}
+
+.subtitle {
+  color: #64748b;
+  font-size: 1rem;
+  margin: -8px 0 0;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.inputGroup label {
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.inputWrap {
+  background: rgba(2, 6, 23, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: #475569;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.inputWrap:focus-within {
+  border-color: #0062ff;
+  box-shadow: 0 0 0 3px rgba(0, 98, 255, 0.1);
+  color: #0062ff;
+}
+
+.inputWrap input {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  flex: 1;
+  outline: none;
+  font-family: inherit;
+}
+
+.inputWrap input::placeholder {
+  color: #334155;
+}
+
+.eyeBtn {
+  background: none;
+  border: none;
+  color: #475569;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  transition: color 0.2s;
+}
+
+.eyeBtn:hover { color: white; }
+
+.inputRow {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.otpInput {
+  font-size: 1.5rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.4em !important;
+  text-align: center;
+  width: 100%;
+}
+
+.otpHeader {
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.otpIcon {
+  width: 64px;
+  height: 64px;
+  background: rgba(0, 98, 255, 0.1);
+  border: 1px solid rgba(0, 98, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0062ff;
+  margin: 0 auto 20px;
+}
+
+.otpHeader h2 {
+  font-size: 1.75rem;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.otpHeader p {
+  color: #64748b;
+}
+
+.otpHeader strong {
+  color: white;
+}
+
+.error {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  color: #ef4444;
+  padding: 12px 16px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.submitBtn {
+  background: #0062ff;
+  color: white;
+  padding: 16px;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 800;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: 0 8px 30px rgba(0, 98, 255, 0.4);
+  transition: transform 0.2s, background 0.2s;
+  margin-top: 4px;
+}
+
+.submitBtn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  background: #0056e0;
+}
+
+.submitBtn:disabled {
+  background: #1e293b;
+  box-shadow: none;
+  cursor: not-allowed;
+  color: #475569;
+}
+
+.backBtn {
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #64748b;
+  padding: 14px;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.backBtn:hover {
+  background: rgba(255, 255, 255, 0.04);
+  color: white;
+}
+
+.switchLink {
+  text-align: center;
+  color: #475569;
+  font-size: 0.9rem;
+  margin-top: 4px;
+}
+
+.switchLink a {
+  color: #0062ff;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.switchLink a:hover {
+  text-decoration: underline;
+}
+
+.trust {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: #334155;
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+}

@@ -1,0 +1,53 @@
+{
+  "module_info": {
+    "name": "terraform-aws-iam-role-module",
+    "version": "1.0.0",
+    "description": "AWS IAM Role L1 Module with comprehensive security controls and CCMS compliance",
+    "provider": "aws",
+    "service": "iam",
+    "resource_type": "iam_role",
+    "tier": "L1",
+    "compliance": "CCMS"
+  },
+  "security_controls": {
+    "implemented": [
+      "IAM-01", "IAM-02", "IAM-03", "IAM-04", "IAM-05", "IAM-06", "IAM-07"
+    ],
+    "total_count": 7,
+    "compliance_frameworks": ["NIST", "ISO27001", "SOC2", "PCI-DSS"]
+  },
+  "ccms_config": {
+    "tag_chaining": true,
+    "l1_module": true,
+    "security_validation": true,
+    "compliance_reporting": true
+  },
+  "features": {
+    "assume_role_policy": true,
+    "mfa_enforcement": true,
+    "external_id_support": true,
+    "ip_restrictions": true,
+    "time_based_access": true,
+    "permissions_boundary": true,
+    "instance_profile": true,
+    "cloudtrail_integration": true,
+    "policy_attachments": true,
+    "inline_policies": true
+  },
+  "supported_trust_entities": [
+    "AWS Services",
+    "AWS Accounts",
+    "IAM Roles",
+    "SAML Providers",
+    "OIDC Providers"
+  ],
+  "common_aws_services": [
+    "ec2.amazonaws.com",
+    "lambda.amazonaws.com",
+    "ecs-tasks.amazonaws.com",
+    "apigateway.amazonaws.com",
+    "cloudformation.amazonaws.com",
+    "codebuild.amazonaws.com",
+    "codepipeline.amazonaws.com"
+  ]
+}

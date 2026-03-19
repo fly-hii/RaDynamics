@@ -1,0 +1,220 @@
+.container {
+  padding: 32px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+  padding: 24px 32px;
+  background: var(--bg-card);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+}
+
+.headerInfo h1 {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin: 0;
+}
+
+.headerInfo p {
+  color: var(--text-dim);
+  font-size: 0.9rem;
+  margin-top: 4px;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.statCard {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.statIcon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+
+.statIconNginx { background: rgba(16, 185, 129, 0.1); color: #10b981; }
+.statIconActive { background: rgba(59, 130, 246, 0.1); color: #3b82f6; }
+.statIconSecurity { background: rgba(139, 92, 246, 0.1); color: #8b5cf6; }
+.statIconPerformance { background: rgba(245, 158, 11, 0.1); color: #f59e0b; }
+
+.statValue {
+  color: var(--text-main);
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+
+.statLabel {
+  color: var(--text-dim);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.setupCard {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 24px;
+  margin-bottom: 32px;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.sectionHeader h2 {
+  color: var(--text-main);
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+
+.modeOptions {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.modeOption {
+  background: rgba(2, 6, 23, 0.4);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.modeOption:hover { border-color: var(--border-hover); }
+.modeOption.active { border-color: var(--primary); background: rgba(0, 98, 255, 0.05); }
+
+.appGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.appSelectionCard {
+  background: rgba(2, 6, 23, 0.4);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.appSelectionCard.selected { border-color: var(--success); background: rgba(16, 185, 129, 0.05); }
+
+.setupActions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+
+.communicationsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 16px;
+}
+
+.communicationCard {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 20px;
+}
+
+.commStatus { display: flex; align-items: center; gap: 6px; font-size: 0.7rem; font-weight: 800; text-transform: uppercase; }
+.commType { background: rgba(16, 185, 129, 0.1); color: var(--success); padding: 2px 8px; border-radius: 4px; font-size: 0.65rem; font-weight: 800; }
+.commTitle { font-size: 1.1rem; font-weight: 800; color: white; margin: 12px 0; }
+
+.btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  border: 1px solid var(--border);
+  transition: all 0.2s;
+}
+
+.btnPrimary { background: var(--primary); color: white; border: none; }
+.btnGhost { background: rgba(255, 255, 255, 0.03); color: var(--text-dim); }
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(2, 6, 23, 0.8);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modalContent {
+  background: #0f172a;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  width: 90%;
+  max-width: 600px;
+  padding: 24px;
+}
+
+.metricsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.metricCard {
+  background: rgba(2, 6, 23, 0.4);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+}
+
+.metricValue { font-size: 1.5rem; font-weight: 800; color: white; }
+.metricLabel { font-size: 0.7rem; color: var(--text-dim); font-weight: 700; margin-top: 4px; text-transform: uppercase; }
+
+.spin { animation: spin 2s linear infinite; }
+@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }

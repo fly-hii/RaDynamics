@@ -1,0 +1,46 @@
+{
+  "module_info": {
+    "name": "terraform-aws-security-group-module",
+    "version": "1.0.0",
+    "description": "AWS Security Group L1 Module with comprehensive security controls and CCMS compliance",
+    "provider": "aws",
+    "service": "ec2",
+    "resource_type": "security_group",
+    "tier": "L1",
+    "compliance": "CCMS"
+  },
+  "security_controls": {
+    "implemented": [
+      "SG-01", "SG-02", "SG-03", "SG-04", "SG-05"
+    ],
+    "total_count": 5,
+    "compliance_frameworks": ["NIST", "ISO27001", "SOC2", "PCI-DSS"]
+  },
+  "ccms_config": {
+    "tag_chaining": true,
+    "l1_module": true,
+    "security_validation": true,
+    "compliance_reporting": true
+  },
+  "features": {
+    "ingress_rules": true,
+    "egress_rules": true,
+    "security_group_references": true,
+    "flow_logs_integration": true,
+    "ssh_access_restriction": true,
+    "rule_description_enforcement": true,
+    "security_monitoring": true
+  },
+  "supported_protocols": [
+    "tcp", "udp", "icmp", "icmpv6", "all"
+  ],
+  "common_ports": {
+    "ssh": 22,
+    "http": 80,
+    "https": 443,
+    "mysql": 3306,
+    "postgresql": 5432,
+    "redis": 6379,
+    "mongodb": 27017
+  }
+}
