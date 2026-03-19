@@ -1,0 +1,105 @@
+{
+  "name": "ECR Repository",
+  "description": "AWS Elastic Container Registry (ECR) repository for storing Docker images",
+  "category": "Container Services",
+  "icon": "FaDocker",
+  "version": "1.0.0",
+  "provider": "aws",
+  "resources": [
+    {
+      "type": "aws_ecr_repository",
+      "name": "ECR Repository",
+      "description": "Container image repository"
+    },
+    {
+      "type": "aws_ecr_repository_policy",
+      "name": "Repository Policy",
+      "description": "Access control policy for the repository"
+    },
+    {
+      "type": "aws_ecr_lifecycle_policy",
+      "name": "Lifecycle Policy",
+      "description": "Image lifecycle management policy"
+    },
+    {
+      "type": "aws_ecr_registry_scanning_configuration",
+      "name": "Registry Scanning",
+      "description": "Image vulnerability scanning configuration"
+    },
+    {
+      "type": "aws_cloudwatch_log_group",
+      "name": "CloudWatch Log Group",
+      "description": "Log group for ECR operations"
+    }
+  ],
+  "security_controls": [
+    {
+      "id": "ECR-01",
+      "name": "Image Vulnerability Scanning",
+      "description": "Enable automatic vulnerability scanning for pushed images",
+      "category": "Security",
+      "severity": "High",
+      "implementation": "scan_on_push = true"
+    },
+    {
+      "id": "ECR-02",
+      "name": "Encryption at Rest",
+      "description": "Encrypt container images at rest using KMS",
+      "category": "Encryption",
+      "severity": "High",
+      "implementation": "encryption_configuration with KMS key"
+    },
+    {
+      "id": "ECR-03",
+      "name": "Access Control",
+      "description": "Implement repository-level access policies",
+      "category": "Access Control",
+      "severity": "Medium",
+      "implementation": "aws_ecr_repository_policy"
+    },
+    {
+      "id": "ECR-04",
+      "name": "Image Lifecycle Management",
+      "description": "Automatically manage image lifecycle and retention",
+      "category": "Data Management",
+      "severity": "Medium",
+      "implementation": "aws_ecr_lifecycle_policy"
+    }
+  ],
+  "compliance": {
+    "ccms": true,
+    "security_frameworks": ["NIST", "CIS", "AWS Security Best Practices"],
+    "data_classification": ["public", "internal", "confidential", "restricted"]
+  },
+  "estimated_cost": {
+    "monthly_base": 0.10,
+    "unit": "per GB stored",
+    "factors": [
+      "Storage usage",
+      "Data transfer",
+      "Registry scanning"
+    ]
+  },
+  "deployment_time": {
+    "estimated_minutes": 5,
+    "factors": [
+      "Repository creation",
+      "Policy configuration",
+      "Scanning setup"
+    ]
+  },
+  "prerequisites": [
+    "AWS CLI configured",
+    "Appropriate IAM permissions",
+    "KMS key for encryption (optional)"
+  ],
+  "outputs": [
+    "repository_arn",
+    "repository_url",
+    "registry_id"
+  ],
+  "tags": {
+    "required": ["Name", "Environment", "Project"],
+    "optional": ["Owner", "CostCenter", "Application"]
+  }
+}
