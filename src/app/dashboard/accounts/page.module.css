@@ -279,3 +279,6 @@
 
 .confirmBtn:disabled { background: #1e293b; box-shadow: none; cursor: not-allowed; color: #475569; }
 .confirmBtn:not(:disabled):hover { background: #0056e0; }
+
+@media (max-width: 1024px) { .accountGrid { grid-template-columns: 1fr; } }
+@media (max-width: 768px) { .hdr { flex-direction: column; gap: 16px; } .formRow { grid-template-columns: 1fr; } .modal { padding: 24px; } }

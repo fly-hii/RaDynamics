@@ -82,6 +82,12 @@ export default function DashboardLayout({
   return (
     <div className={styles.layout}>
       {/* Sidebar */}
+      {sidebarOpen && (
+        <div 
+          className={styles.mobileOverlay} 
+          onClick={() => setSidebarOpen(false)}
+        />
+      )}
       <aside className={`${styles.sidebar} ${sidebarOpen ? styles.sidebarOpen : styles.sidebarClosed}`}>
         <div className={styles.sidebarHeader}>
           <Link href="/dashboard" className={styles.logo}>
@@ -128,6 +134,12 @@ export default function DashboardLayout({
         {/* Header */}
         <header className={styles.header}>
           <div className={styles.headerLeft}>
+             <button 
+               className={styles.mobileMenuBtn}
+               onClick={() => setSidebarOpen(true)}
+             >
+               <Menu size={20} />
+             </button>
              <div className={styles.searchBox} onClick={() => setSearchOpen(true)}>
                <Search size={18} className={styles.searchIcon} />
                <div className={styles.searchPlaceholder}>Search services or pages...</div>

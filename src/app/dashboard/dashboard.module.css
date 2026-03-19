@@ -2,6 +2,8 @@
   display: flex;
   min-height: 100vh;
   background-color: var(--bg-dark);
+  position: relative;
+  overflow-x: hidden;
 }
 
 /* Sidebar Styling */
@@ -15,6 +17,26 @@
   top: 0;
   height: 100vh;
   z-index: 50;
+}
+
+.mobileOverlay {
+  display: none;
+}
+
+.mobileMenuBtn {
+  display: none;
+  background: none;
+  border: none;
+  color: #94a3b8;
+  padding: 8px;
+  cursor: pointer;
+  border-radius: 8px;
+  margin-right: 12px;
+}
+
+.mobileMenuBtn:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
 }
 
 .sidebarOpen {
@@ -428,20 +450,72 @@
   .sidebar {
     position: fixed;
     height: 100vh;
+    transform: translateX(-100%);
+    width: 280px;
   }
   
+  .sidebarOpen {
+    transform: translateX(0);
+    width: 280px;
+    box-shadow: 4px 0 24px rgba(0,0,0,0.5);
+  }
+
   .sidebarClosed {
-    width: 0;
-    padding: 0;
-    overflow: hidden;
+    transform: translateX(-100%);
+    width: 280px; 
     border-right: none;
   }
 
-  .header {
-    padding: 0 20px;
+  .mobileOverlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    z-index: 45;
   }
 
-  .searchBox, .newBtn, .userInfo {
+  .mobileMenuBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .header {
+    padding: 0 16px;
+    height: 70px;
+  }
+
+  .headerLeft {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+
+  .searchBox {
+    width: 100%;
+    margin-right: 16px;
+  }
+
+  .shortcut, .newBtn, .userInfo {
     display: none;
+  }
+
+  .content {
+    padding: 16px;
+  }
+
+  .avatar {
+    width: 32px;
+    height: 32px;
+  }
+
+  .iconBtn {
+    padding: 8px;
+  }
+
+  .userProfile {
+    padding-left: 12px;
+    gap: 8px;
   }
 }

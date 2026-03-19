@@ -283,6 +283,13 @@
   .statsGrid { grid-template-columns: 1fr 1fr; }
 }
 
+@media (max-width: 768px) {
+  .container { padding: 20px; }
+  .statsGrid { gap: 16px; margin-bottom: 24px; }
+  .mainCard { padding: 24px; }
+  .cardHeader h3 { font-size: 1.1rem; }
+}
+
 @media (max-width: 640px) {
   .statsGrid { grid-template-columns: 1fr; }
 }
