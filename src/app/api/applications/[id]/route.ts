@@ -5,15 +5,16 @@ import Application from "@/models/Application";
 
 export async function GET(
   req: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    const { id } = await params;
     await dbConnect();
     const user = await getAuthenticatedUser(req);
     if (!user) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
     const app = await Application.findOne({ 
-      _id: params.id,
+      _id: id,
       userId: user.userId 
     });
 
@@ -27,15 +28,16 @@ export async function GET(
 
 export async function DELETE(
   req: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    const { id } = await params;
     await dbConnect();
     const user = await getAuthenticatedUser(req);
     if (!user) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
     const app = await Application.findOne({ 
-      _id: params.id,
+      _id: id,
       userId: user.userId 
     });
 
@@ -47,7 +49,7 @@ export async function DELETE(
     // status: ['pending', 'cloning', 'building', 'pushing', 'deploying', 'running', 'stopped', 'failed', 'error']
     
     // I'll just delete it for now to fulfill the CRUD request, or implement a cleanup logic.
-    await Application.deleteOne({ _id: params.id });
+    await Application.deleteOne({ _id: id });
 
     return NextResponse.json({ success: true, message: "Application deleted successfully" });
   } catch (error: any) {

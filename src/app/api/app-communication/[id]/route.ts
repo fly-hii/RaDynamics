@@ -5,15 +5,16 @@ import AppCommunication from "@/models/AppCommunication";
 
 export async function GET(
   req: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    const { id } = await params;
     await dbConnect();
     const user = await getAuthenticatedUser(req);
     if (!user) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
     const communication = await AppCommunication.findOne({
-      _id: params.id,
+      _id: id,
       userId: user.userId
     }).populate('applications', 'name url status deploymentTarget');
     
@@ -29,16 +30,17 @@ export async function GET(
 
 export async function PUT(
   req: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    const { id } = await params;
     await dbConnect();
     const user = await getAuthenticatedUser(req);
     if (!user) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
     const body = await req.json();
     const communication = await AppCommunication.findOne({
-      _id: params.id,
+      _id: id,
       userId: user.userId
     });
     
@@ -62,15 +64,16 @@ export async function PUT(
 
 export async function DELETE(
   req: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    const { id } = await params;
     await dbConnect();
     const user = await getAuthenticatedUser(req);
     if (!user) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
     const communication = await AppCommunication.findOne({
-      _id: params.id,
+      _id: id,
       userId: user.userId
     });
     

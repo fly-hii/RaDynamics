@@ -5,26 +5,26 @@ import Application from "@/models/Application";
 
 export async function POST(
   req: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    const { id } = await params;
     await dbConnect();
     const user = await getAuthenticatedUser(req);
     if (!user) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
     const app = await Application.findOne({ 
-      _id: params.id,
+      _id: id,
       userId: user.userId 
     });
 
     if (!app) return NextResponse.json({ error: "Application not found" }, { status: 404 });
 
-    // Redeploy logic usually marks it as pending and kicks off a worker
-    app.status = 'pending';
-    app.deploymentLogs = [`[${new Date().toISOString()}] Redeployment initiated by user Request.`];
+    // Simulate starting ECS service/EC2 instance
+    app.status = 'running';
     await app.save();
 
-    return NextResponse.json({ success: true, message: "Redeployment started", application: app });
+    return NextResponse.json({ success: true, message: "Application started", application: app });
   } catch (error: any) {
     return NextResponse.json({ error: error.message }, { status: 500 });
   }

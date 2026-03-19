@@ -7,12 +7,13 @@ import { destroyTerraform } from '@/lib/terraform-service';
 
 export async function POST(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    const { id } = await params;
     await dbConnect();
     const user = await getAuthenticatedUser(request);
-    const deploymentId = params.id;
+    const deploymentId = id;
 
     if (!user) {
       return NextResponse.json({ success: false, error: 'Unauthorized.' }, { status: 401 });

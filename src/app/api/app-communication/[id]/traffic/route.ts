@@ -5,15 +5,16 @@ import AppCommunication from "@/models/AppCommunication";
 
 export async function GET(
   req: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    const { id } = await params;
     await dbConnect();
     const user = await getAuthenticatedUser(req);
     if (!user) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
     const communication = await AppCommunication.findOne({
-      _id: params.id,
+      _id: id,
       userId: user.userId
     });
     
